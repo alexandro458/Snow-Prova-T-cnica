@@ -11915,6 +11915,7 @@ GameObject:
   - component: {fileID: 330585545}
   - component: {fileID: 330585544}
   - component: {fileID: 330585547}
+  - component: {fileID: 330585548}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -11989,13 +11990,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 198, y: 26.9, z: 43.9}
+  m_LocalRotation: {x: -0, y: 0.3638425, z: -0, w: 0.9314605}
+  m_LocalPosition: {x: 121.1, y: 26.9, z: 43.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 42.673, z: 0}
 --- !u!114 &330585547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12040,6 +12041,23 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &330585548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330585543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 618b0e3f6c65dd247a4a016150006c57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_LookSpeedController: 120
+  m_LookSpeedMouse: 4
+  m_MoveSpeed: 10
+  m_MoveSpeedIncrement: 2.5
+  m_Turbo: 10
 --- !u!114 &361682848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14744,8 +14762,11 @@ VisualEffect:
   m_PropertySheet:
     m_Float:
       m_Array:
-      - m_Value: 12
+      - m_Value: 50
         m_Name: Rate
+        m_Overridden: 1
+      - m_Value: 15
+        m_Name: LifeTime
         m_Overridden: 1
     m_Vector2f:
       m_Array: []
@@ -15511,8 +15532,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1997088323}
-  - component: {fileID: 1997088326}
-  - component: {fileID: 1997088325}
   - component: {fileID: 1997088324}
   m_Layer: 0
   m_Name: Cube
@@ -15530,87 +15549,26 @@ Transform:
   m_GameObject: {fileID: 1997088322}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 97.61, y: 52.69, z: 310.94}
+  m_LocalPosition: {x: 68.6, y: 52.69, z: 310.94}
   m_LocalScale: {x: 5.703718, y: 5.703718, z: 5.703718}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1297552602}
   m_Father: {fileID: 1255336497}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1997088324
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1997088322}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &1997088325
-MeshRenderer:
+--- !u!114 &1997088324
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1997088322}
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1997088326
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1997088322}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7e78496ac5f80c498e0b5a148a305f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vfx: {fileID: 1297552604}
 --- !u!28 &2020829478
 Texture2D:
   m_ObjectHideFlags: 0
@@ -15823,19 +15781,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shellMesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
   shellShader: {fileID: -6465566751694194690, guid: 6020127a2b6322d4bbe4cefe0beafa58, type: 3}
-  updateStatics: 0
+  updateStatics: 1
   shellCount: 47
   shellDisplacement: 0.01
   shellAlphaOffset: 0.008
-  snowColor: {r: 0, g: 0, b: 0, a: 0}
-  darkSnowColor: {r: 0, g: 0, b: 0, a: 0}
+  snowColor: {r: 1, g: 1, b: 1, a: 0}
+  darkSnowColor: {r: 0.5471698, g: 0.5471698, b: 0.5471698, a: 0}
   alpha: 2.49
   alphaClipping: 0.028
   gradientOffset: 0.18
   noiseColor: 0.097
   stepStrength: 8.4
-  snowDensity: 0
-  noiseSize: 46
+  snowDensity: 2.35
+  noiseSize: 29.3
   useDoubleNoise: 1
 --- !u!4 &5889566322639624674
 Transform:

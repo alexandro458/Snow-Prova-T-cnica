@@ -38,6 +38,8 @@ public class ShellManager : MonoBehaviour
     [Range(0.0f, 1.0f)]
     public float _TextureStrength = 0.8f;
 
+    public float _SnowTexScale = 1.0f;
+
     public float noiseSize;
     public bool useDoubleNoise = false;
 
@@ -75,6 +77,7 @@ public class ShellManager : MonoBehaviour
             shells[i].GetComponent<MeshRenderer>().material.SetVector("_DarkSnowColor", darkSnowColor);
             shells[i].GetComponent<MeshRenderer>().material.SetFloat("_StepStrength", stepStrength);
             shells[i].GetComponent<MeshRenderer>().material.SetFloat("_TextureStrength", _TextureStrength);
+            shells[i].GetComponent<MeshRenderer>().material.SetFloat("_SnowTexScale", _SnowTexScale);
         }
     }
 
@@ -99,6 +102,7 @@ public class ShellManager : MonoBehaviour
                 shells[i].GetComponent<MeshRenderer>().material.SetVector("_DarkSnowColor", darkSnowColor);
                 shells[i].GetComponent<MeshRenderer>().material.SetFloat("_StepStrength", stepStrength);
                 shells[i].GetComponent<MeshRenderer>().material.SetFloat("_TextureStrength", _TextureStrength);
+                shells[i].GetComponent<MeshRenderer>().material.SetFloat("_SnowTexScale", _SnowTexScale);
             }
         }
     }

@@ -35,6 +35,9 @@ public class ShellManager : MonoBehaviour
 
     public float snowDensity;
 
+    [Range(0.0f, 1.0f)]
+    public float _TextureStrength = 0.8f;
+
     public float noiseSize;
     public bool useDoubleNoise = false;
 
@@ -43,11 +46,6 @@ public class ShellManager : MonoBehaviour
 
     void OnEnable()
     {
-        if(shellShader == null)
-        {
-            shellShader = Shader.Find("CloudLayer");
-            Debug.Log("Accediendo a recursos.");
-        }
         shellMaterial = new Material(shellShader);
 
         shells = new GameObject[shellCount + 1];
@@ -76,6 +74,7 @@ public class ShellManager : MonoBehaviour
             shells[i].GetComponent<MeshRenderer>().material.SetVector("_SnowColor", snowColor);
             shells[i].GetComponent<MeshRenderer>().material.SetVector("_DarkSnowColor", darkSnowColor);
             shells[i].GetComponent<MeshRenderer>().material.SetFloat("_StepStrength", stepStrength);
+            shells[i].GetComponent<MeshRenderer>().material.SetFloat("_TextureStrength", _TextureStrength);
         }
     }
 
@@ -99,6 +98,7 @@ public class ShellManager : MonoBehaviour
                 shells[i].GetComponent<MeshRenderer>().material.SetVector("_SnowColor", snowColor);
                 shells[i].GetComponent<MeshRenderer>().material.SetVector("_DarkSnowColor", darkSnowColor);
                 shells[i].GetComponent<MeshRenderer>().material.SetFloat("_StepStrength", stepStrength);
+                shells[i].GetComponent<MeshRenderer>().material.SetFloat("_TextureStrength", _TextureStrength);
             }
         }
     }

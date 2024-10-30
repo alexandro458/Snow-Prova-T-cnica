@@ -3,16 +3,16 @@ using UnityEngine;
 [RequireComponent(typeof(LineRenderer))]
 public class BezierCreation : MonoBehaviour
 {
-    public Transform point0; // Punto inicial de la curva
-    public Transform point1; // Primer punto de control
-    public Transform point2; // Segundo punto de control
-    public Transform point3; // Punto final de la curva
+    public Transform point0;
+    public Transform point1;
+    public Transform point2;
+    public Transform point3;
 
     [Range(0, 1)]
-    public float t = 0f; // Valor para probar posiciones en la curva
+    public float t = 0f;
 
-    public int segments = 20; // Número de segmentos para dividir la curva
-    public float lineWidth = 0.2f; // Grosor de la línea
+    public int segments = 20;
+    public float lineWidth = 0.2f;
 
     private LineRenderer lineRenderer;
 
@@ -20,13 +20,12 @@ public class BezierCreation : MonoBehaviour
     {
         // Configura el LineRenderer
         lineRenderer = GetComponent<LineRenderer>();
-        lineRenderer.positionCount = segments + 1; // Número de puntos en la línea
+        lineRenderer.positionCount = segments + 1;
         lineRenderer.startWidth = lineWidth;
         lineRenderer.endWidth = lineWidth;
     }
     void Update()
     {
-        // Actualiza los puntos en el LineRenderer para dibujar la curva
         for (int i = 0; i <= segments; i++)
         {
             float parameter = i / (float)segments;
@@ -35,7 +34,6 @@ public class BezierCreation : MonoBehaviour
         }
     }
 
-    // Método para calcular un punto en la curva de Bézier cúbica
     private Vector3 CalculateBezierPoint(float t, Vector3 p0, Vector3 p1, Vector3 p2, Vector3 p3)
     {
         float u = 1 - t;

@@ -1,8 +1,8 @@
-Shader "Custom/WhiteShader"
+Shader "Custom/SimpleColorShader"
 {
     Properties
     {
-        // No necesitamos ninguna propiedad para este shader básico
+        _Color ("Color", Color) = (1, 1, 1, 1)
     }
     SubShader
     {
@@ -15,7 +15,8 @@ Shader "Custom/WhiteShader"
             #pragma vertex vert
             #pragma fragment frag
 
-            // Función de vértice
+            fixed4 _Color;
+
             struct appdata
             {
                 float4 vertex : POSITION;
@@ -33,12 +34,12 @@ Shader "Custom/WhiteShader"
                 return o;
             }
 
-            // Función de fragmento (devuelve color blanco)
             fixed4 frag (v2f i) : SV_Target
             {
-                return fixed4(1.0, 1.0, 1.0, 1.0); // Color blanco RGBA
+                return _Color;
             }
             ENDCG
         }
     }
+    FallBack "Diffuse"
 }

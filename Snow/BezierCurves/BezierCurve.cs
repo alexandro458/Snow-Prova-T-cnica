@@ -3,7 +3,6 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class BezierCurve : MonoBehaviour
 {
-    // Puntos de control de la curva de Bézier cúbica
     public Transform point0;
     public Transform point1;
     public Transform point2;
@@ -14,9 +13,9 @@ public class BezierCurve : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        // Dibujar la curva en el editor
+
         Vector3 previousPoint = point0.position;
-        int segments = 20; // Número de segmentos de la curva
+        int segments = 20; 
 
         for (int i = 1; i <= segments; i++)
         {
@@ -26,7 +25,6 @@ public class BezierCurve : MonoBehaviour
             previousPoint = pointOnCurve;
         }
 
-        // Dibuja un punto en la curva en función del valor t en el Inspector
         Vector3 positionOnCurve = CalculateBezierPoint(t, point0.position, point1.position, point2.position, point3.position);
         Gizmos.color = Color.red;
         Gizmos.DrawSphere(positionOnCurve, 0.1f);
